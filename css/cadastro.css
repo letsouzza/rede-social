@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul, ol, li{
+    list-style: none;
+}
+
+body{
+    background-color: #1c1c1c;
+}
+
+#fundo{
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    align-items: center;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.nome h1{
+    position: relative;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 40;
+    color: #f3c3ff;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 5vh;
+    gap: 4vh;
+    position: absolute;
+    top: 15vh;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    height: 110vh;
+    width: 100vh;
+    border-radius: 5vh;
+}
+
+.card h2{
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 40;
+    font-size: 3rem;
+    padding-top: 3vh;
+}
+
+.card input{
+    display: flex;
+    border: none;
+    border-radius: 5vh;
+    gap: 10vh;
+    width: 90vh;
+    height: 10vh;
+    padding-left: 10vh;
+    font-family: "Inter", sans-serif;
+    font-size: 3vh;
+}
+
+.div-input{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.div-input img{
+    position: relative;
+    width: 5%;
+    height: 20px;
+    left: 50px;
+    top: 20px;
+}
+
+.div-input-check{
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    padding-right: 43vh;
+    gap: 1.5vh;
+}
+
+.div-input-check p{
+    padding-top: 1.2vh;
+    font-family: "Inter", sans-serif;
+}
+
+#inputCheck{
+    width: 5vh;
+    height: 5vh;
+}
+
+.botoes{
+    display: flex;
+    position: absolute;
+    top: 130vh;
+    gap: 5vh;
+}
+
+.botoes button{
+    background-color: #d9d9d9;
+    opacity: 65%;
+    height: 12vh;
+    width: 50vh;
+    border-radius: 6vh;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 4vh;
+}
