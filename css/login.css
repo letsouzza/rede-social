@@ -100,7 +100,7 @@ main{
     top: 16px;
 }
 
-main a{
+.esqueceu a{
     padding-left: 65%;
     font-family: "Gothic A1", sans-serif;
 }
@@ -115,4 +115,11 @@ button{
     opacity: 65%;
     font-size: 5vh;
     font-family: "Inter", sans-serif;
+    left: 95vh;
+}
+
+.cadastrar a{
+    padding-left: 65%;
+    font-family: "Gothic A1", sans-serif;
+    color: #ffff;
 }
