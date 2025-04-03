@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* header{
+    width: 100vw;
+    height: 30vh;
+} */
+
+/* Configurações do Botão seguir */
+#seguir{
+    width: 20vh;
+    font-family: "Gothic A1", sans-serif;
+    font-size: 4vh;
+    color: white;
+    background-color: #740098;
+}
+
+/* main{
+    width: 100vw;
+    height: 60vh;
+} */
+
+/* Organizando a barra de menu no footer */
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424242;
+    width: 100vw;
+    height: 10vh;
+}
+footer img{
+    width: 8vh;
+}

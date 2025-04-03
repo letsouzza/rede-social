@@ -126,3 +126,23 @@ main{
     font-family: "Gothic A1", sans-serif;
     font-size: 4vh;
 }
+/* 
+.senha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.senha input {
+    width: 100%;
+    padding-right: 40px; 
+}
+
+#senhaEscondida {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+} */
