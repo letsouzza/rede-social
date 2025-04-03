@@ -51,7 +51,7 @@ main{
 
 .card{
     position: absolute;
-    top: 15vh;
+    top: 10vh;
     border-radius: 10vh;
     background-color: #D9D9D9;
     height: 70vh;
@@ -107,7 +107,7 @@ main{
 
 button{
     position: absolute;
-    top: 90vh;
+    top: 85vh;
     border-radius: 5vh;
     background-color: #D9D9D9;
     height: 10vh;
@@ -118,8 +118,10 @@ button{
     left: 95vh;
 }
 
-.cadastrar a{
-    padding-left: 65%;
+.cadastrar{
+    position: relative;
+    top: -68vh;
     font-family: "Gothic A1", sans-serif;
-    color: #ffff;
+    color: #ffffff;
+    font-size: 2.2vh;
 }

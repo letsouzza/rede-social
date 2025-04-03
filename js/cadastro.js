@@ -12,29 +12,29 @@ const cadastrarUser = async () => {
     const imagem = document.getElementById('imagem').value
     const check = document.getElementById('inputCheck').value
 
-    if (user            == '' || user             == null || user             == undefined || 
-        email           == '' || email            == null || email            == undefined ||
-        senha           == '' || senha            == null || senha            == undefined || 
-        confirmarSenha  == '' || confirmarSenha   == null || confirmarSenha   == undefined ||
-        palavra         == '' || palavra          == null || palavra          == undefined ||
-        imagem          == '' || imagem           == null || imagem           == undefined ||
-        check           == '' || check            == null || check            == undefined 
-    ){
-        alert ('Dados não preenchidos!')
-    }else{
+    if (user == '' || user == null || user == undefined ||
+        email == '' || email == null || email == undefined ||
+        senha == '' || senha == null || senha == undefined ||
+        confirmarSenha == '' || confirmarSenha == null || confirmarSenha == undefined ||
+        palavra == '' || palavra == null || palavra == undefined ||
+        imagem == '' || imagem == null || imagem == undefined ||
+        check == '' || check == null || check == undefined
+    ) {
+        alert('Dados não preenchidos!')
+    } else {
 
-        if(senha == confirmarSenha){
+        if (senha == confirmarSenha) {
             const data = {
-                nome: user, 
+                nome: user,
                 email: email,
                 senha: senha,
                 premium: check,
                 imagemPerfil: imagem,
                 senhaRecuperacao: palavra
             }
-    
+
             const url = "https://back-spider.vercel.app/user/cadastrarUser"
-        
+
             const options = {
                 method: 'Post',
                 headers: {
@@ -45,37 +45,49 @@ const cadastrarUser = async () => {
 
             const response = await fetch(url, options)
 
-            if(response.status == 201){
+            if (response.status == 201) {
                 window.location.href = "../../index.html" // Navegaer para outra tela 
             }
 
-        }else{
-            alert ('Senha e confirmar senha não estão corretas')
+        } else {
+            alert('Senha e confirmar senha não estão corretas')
         }
     }
 }
 
+// Mudar visibilidade da senha 
+// Imagens de olhos 
+const imgOlhoAberto1 = "https://cdn-icons-png.flaticon.com/512/11502/11502607.png";
+const imgOlhoFechado1 = "https://cdn-icons-png.flaticon.com/512/9726/9726597.png";
 
-// document.addEventListener("DOMContentLoaded", () => {
-//     const senhaInput = document.getElementById("senha1");
-//     const confirmarSenhaInput = document.getElementById("senha2");
-//     const escondido = document.getElementById("senhaEscondida");
+const senhaInput = document.getElementById("senha1");
+const escondido1 = document.getElementById("senhaEscondida")
+const confirmarSenhaInput = document.getElementById("senha2");
+const escondido = document.getElementById("senhaEscondida1");
 
-//     const imgOlhoAberto = "https://cdn-icons-png.flaticon.com/512/11502/11502607.png";
-//     const imgOlhoFechado = "https://cdn-icons-png.flaticon.com/512/9726/9726597.png";
+// senha
+const changeVisiblePassword = () => {
 
-//     escondido.addEventListener("click", () => {
-//         if (senhaInput.type === "password") {
-//             senhaInput.type = "text";
-//             confirmarSenhaInput = "text"   
-//             escondido.src = imgOlhoAberto; 
-//         } else {
-//             senhaInput.type = "password";
-//             confirmarSenhaInput.type = "password"
-//             escondido.src = imgOlhoFechado; 
-//         }
-//     });
-// });
+    if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        escondido1.src = imgOlhoAberto1;
+    } else {
+        senhaInput.type = "password";
+        escondido1.src = imgOlhoFechado1;
+    }
+}
+
+// confirmar senha
+const changeVisibleConfirmPassword = () => {
+
+    if (confirmarSenhaInput.type === "password") {
+        confirmarSenhaInput.type = "text";
+        escondido.src = imgOlhoAberto1;
+    } else {
+        confirmarSenhaInput.type = "password";
+        escondido.src = imgOlhoFechado1;
+    }
+}
 
 
 buttonCadastrar.addEventListener('click', cadastrarUser)
