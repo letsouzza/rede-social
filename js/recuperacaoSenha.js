@@ -2,7 +2,7 @@
 
 const botaoRecuperar = document.querySelector("button")  //Busca pelo botão
 const modal = document.querySelector("dialog") //Busca pelo dialog e adiciona ele na variável
-const boataoModificar = document.querySelector("dialog button") //Busca pelo botão que está dentro do dialog
+const botaoModificar = document.querySelector("dialog button") //Busca pelo botão que está dentro do dialog
 
 const recuperarSenha = async () => {
     let email = document.getElementById('email').value
@@ -20,6 +20,9 @@ const recuperarSenha = async () => {
             email: email,
             wordKey: palavra
         }
+
+        console.log(data);
+        
     
         let options = {
             method: 'Post',
@@ -30,53 +33,71 @@ const recuperarSenha = async () => {
         }
     
         const response = await fetch(url, options)
+
+
+        const responseData = await response.json();
         
-        if(response.status == 200){
-            //Cria uma função definindo o que acontecerá quando clicar no botão
-            botaoRecuperar.onclick = function(){   
-                modal.showModal()                      
-            }     
-            
-            boataoModificar.onclick = async function(id){
-                let senha = document.getElementById('senha')
-                let confirmar = document.getElementById('confirmar')
-                let url2 = `https://back-spider.vercel.app/user/newPassword/${id}`
-
-                if(
-                    senha     == '' || senha     == null || senha     == undefined ||
-                    confirmar == '' || confirmar == null || confirmar == undefined
-                ){
-                    alert('Os dados não foram preenchidos corretamente!')
-                }else{
-                    let data = {
-                        senha: senha,
-                        senha: confirmar
-                    }
-
-                    let options = {
-                        method: 'Post',
-                        headers:{
-                            'Content-type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    }
-
-                    const response = await fetch(url2, options)
-                    
-                    if(response.status == 200){
-                        modal.close()
-                    }else{
-                       alert('Dados inválidos')
-                    }
-                }
-                
-                
-            }
-            
+        localStorage.setItem('idUser', responseData.id)
+        
+        if(response.ok){
+            botaoRecuperar.onclick = function(){
+                modal.showModal()
+            } 
         }else{    
             alert('Dados inválidos')
         } 
     }
+}
+
+const modificarSenha = async function(id) {
+    let novaSenha = document.getElementById('senha').value
+    let confirmarSenha = document.getElementById('confirmar').value
+    let url = `https://back-spider.vercel.app/user/newPassword/${id}`
+
+    if(
+        novaSenha      == '' || novaSenha      == null || novaSenha      == undefined ||
+        confirmarSenha == '' || confirmarSenha == null || confirmarSenha == undefined
+    ){
+        alert('Dados não preenchidos corretamente!')
+    }else{
+   
+        let data = {
+            senha: novaSenha
+        }
+        let options = {
+            method: 'PUT',
+            headers:{
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }
+        const response = await fetch(url, options)
+
+        console.log( await response);
+
+        if(response.ok){
+            alert("Senha Alterada com Sucesso !")
+            return true
+        }else{
+            alert('Não foi possível modificar a senha')
+        }
+    }
+}
+
+
+botaoModificar.onclick = async function(){
+
+    let idUser = localStorage.getItem("idUser")
+
+    const validaPassword = await modificarSenha(idUser)
+    
+    if (validaPassword){
+        modal.close()   
+        window.location.href = "../../index.html"
+    }
+
+
+
 }
 
 

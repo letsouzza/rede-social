@@ -15,6 +15,13 @@ body{
 
 
 /* Header */
+#barraCima{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+}
+
 /* Configurações do texto e número de seguidores  */
 .textoSeguir{
     display: flex;
@@ -60,16 +67,35 @@ body{
     cursor: pointer;
 }
 
+/* Configurações da biografia */
 .divBiografia{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding-top: 8vh;
 }
-
 .divBiografia span{
     font-family: "Gothic A1", sans-serif;
-    font-size: 3vh;
+    font-size: 3.5vh;
     color: white;
+}
+
+/* Configurações da imagem e nome do usuário */
+.divUser{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding-top: 1vh;
+    padding-left: 5vh;
+}
+.divUser img{
+    justify-content: center;
+    border-radius: 100%;
+    width: 25vh;
+    height: 25vh;
+}
+.divUser h3{
+    font-family: "Gothic A1", sans-serif;
+    color: white;
+    font-size: 4vh;
+    text-align: center;
 }
 
 
@@ -87,6 +113,17 @@ body{
     height: 40vh;
 }
 
+/* Modal */
+/* Configurações do modal */
+dialog{
+    width: 50vh;
+    height: 60vh;
+}
+
+dialog span{
+    width: 100%;
+    justify-content: end;
+}
 
 /* Footer */
 /* Organizando a barra de menu no footer */

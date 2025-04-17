@@ -120,15 +120,35 @@ dialog::backdrop{
 
 dialog{
     width: 50vh;
-    height: 30vh;
+    height: 40vh;
     border: none;
     box-shadow: 0 0 1em rgb(0 0 0 /.3);
+    border-radius: 2vh;
     left: 90vh;
-    top: 33vh;
-    /* display: flex;
+    top: 22vh;
+    background-color: #d9d9d9;
+    padding-top: 1.5vh;
+}
+
+.modal{
+    display: flex;
     align-items: center;
-    flex-direction: column;  */
-    gap: 3vh;
+    flex-direction: column; 
+    gap: 4vh;
+}
+
+dialog h1{
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 3;
+}
+
+dialog input{
+    background-color: #c5c5c5;
+    border: none;
+    width: 35vh;
+    height: 5vh;
+    padding-left: 2vh;
+    border-radius: 4vh;
 }
 
 dialog button{

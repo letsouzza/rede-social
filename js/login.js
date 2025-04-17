@@ -25,10 +25,14 @@ const login = async () => {
         }
     
         const response = await fetch(url, options)
-        console.log(response)
+
+        const responseData = await response.json()
+        //console.log(responseData.user.id);
+        
         
         if(response.status == 200){
-            window.location.href = "../../home.html"
+            localStorage.setItem('idUser', responseData.user.id)
+            window.location.href = "../src/pages/perfil.html"
         }else{
             alert('Dados inválidos')
         }
