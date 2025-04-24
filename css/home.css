@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background-color: black;
+    background-image: url('../src/imgs/fundo\ galaxia\ 2.png');
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    height: 3vh;
+}
+
+.galeria{
+    padding: 3vh 10vh;
+    display: flex;
+    gap: 5vh;
+}
+.galeria img{
+    width: 10vh;
+    height: 15vh;
+}
+
+/* Main */
+/* Configurações das imagens do post */
+.fotos{
+    display: flex;
+    flex-direction: column;
+    gap: 7vh;
+    padding: 25vh 50vh;
+}
+
+.card{
+    height: 55vh;
+    width: 130vh;
+    display: flex;
+    flex-direction: row;
+    background-color: #DCDCDC;
+    padding: 2vh 1vh;
+    
+}
+
+.divPublicacao{
+    height: 20vh;
+    width: 90vh;
+    display: flex;
+    flex-direction: row;
+    gap: 4vh;
+    padding: 0vh 2vh;
+}
+
+.divPublicacao img{
+    height: 50vh;
+    width: 60vh;
+}
+
+.divTextos{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.divTextos h3{
+    color: #000000;
+}
+
+.divTextos p{
+    color: #000000;
+    font-size: 4vh;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    background-color: #424242;
+    width: 100vw;
+    height: 10vh;
+}
+footer img{
+    width: 8vh;
+}

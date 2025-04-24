@@ -32,7 +32,7 @@ const login = async () => {
         
         if(response.status == 200){
             localStorage.setItem('idUser', responseData.user.id)
-            window.location.href = "../src/pages/perfil.html"
+            window.location.href = "./src/pages/home.html"
         }else{
             alert('Dados inválidos')
         }
