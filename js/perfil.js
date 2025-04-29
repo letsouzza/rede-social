@@ -104,8 +104,8 @@ async function preencherTela() {
     const idUser = localStorage.getItem('idUser')
 
     fotos.forEach(item => {
-        console.log(item);
-        console.log(idUser);
+        // console.log(item);
+        // console.log(idUser);
 
         if (item.idUsuario == idUser) {
             criarImagem(item)

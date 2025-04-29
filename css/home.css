@@ -1,3 +1,4 @@
+/* Configurações gerais */
 *{
     padding: 0;
     margin: 0;
@@ -27,10 +28,11 @@ img{
     width: 100%;
 }
 
+/* Header */
+/* Configurações dos Storys */
 header{
     height: 3vh;
 }
-
 .galeria{
     padding: 3vh 10vh;
     display: flex;
@@ -41,6 +43,7 @@ header{
     height: 15vh;
 }
 
+
 /* Main */
 /* Configurações das imagens do post */
 .fotos{
@@ -49,7 +52,6 @@ header{
     gap: 7vh;
     padding: 25vh 50vh;
 }
-
 .card{
     height: 55vh;
     width: 130vh;
@@ -59,7 +61,6 @@ header{
     padding: 2vh 1vh;
     
 }
-
 .divPublicacao{
     height: 20vh;
     width: 90vh;
@@ -68,27 +69,37 @@ header{
     gap: 4vh;
     padding: 0vh 2vh;
 }
-
 .divPublicacao img{
     height: 50vh;
     width: 60vh;
 }
-
-.divTextos{
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-}
-
-.divTextos h3{
-    color: #000000;
-}
-
 .divTextos p{
+    padding-top: 15vh;
+    width: 60vh;
     color: #000000;
     font-size: 4vh;
 }
+.divUser{
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+}
+.divUser img{
+    justify-content: center;
+    /* border-radius: 100%; */
+    width: 25vh;
+    height: 25vh;
+}
+.divUser h3{
+    font-family: "Gothic A1", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 4vh;
+    text-align: center;
+}
 
+
+/* Footer */
+/* Menu em baixo */
 footer{
     display: flex;
     justify-content: space-between;

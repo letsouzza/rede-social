@@ -3,7 +3,8 @@
 const galeria = document.getElementById('galeria')
 const fotosMain = document.getElementById('fotos')
 
-async function pesquisarStories(){
+
+async function pesquisarStorys(){
     const url = 'https://back-spider.vercel.app/storys/listarStorys' // url da api 
 
     const response  = await fetch(url) // fetch -> faz requisições web (conversa com o back)
@@ -12,7 +13,7 @@ async function pesquisarStories(){
 }
 
 // Função para criar as imgs dentro da DIV 
-function criarStories(link){ // Recebe o link da imagem 
+function criarStorys(link){ // Recebe o link da imagem 
     const novaImg = document.createElement('img') // criando nova imagem 
     novaImg.src = link.imagem// Cria a nova image, com a link da foto do API 
 
@@ -29,64 +30,64 @@ async function pesquisarFotos(){
     return data
 }
 
-function criarPosts(link){ 
-    const divPublicacao = document.createElement('div')
-    divPublicacao.classList = 'divPublicacao'
+async function pesquisarUser(id){
+    const url = `https://back-spider.vercel.app/user/pesquisarUser/${id}`
 
+    const response  = await fetch(url) 
+    const data      = await response.json() 
+    return data
+}
+
+function criarPosts(link, user){ 
+    // Div que cria o Card
     const card = document.createElement('div')
     card.classList = 'card'
 
+    const divPublicacao = document.createElement('div')
+    divPublicacao.classList = 'divPublicacao'
+
+    // Acrescentando o User
+    const divUser = document.createElement('div')
+    divUser.className = 'divUser'
+
+    const userImg = document.createElement('img')
+    userImg.src = user.imagemPerfil
+    divUser.appendChild(userImg)
+
+    const username = document.createElement('h3')
+    username.textContent = user.nome
+    divUser.appendChild(username)
+
+    // Acrescentando Imagem no Card
     const novaImg = document.createElement('img') 
     novaImg.src = link.imagem
+    divPublicacao.appendChild(novaImg)
 
+    // Texto de descrição
     const divTextos = document.createElement('div')
-    divTextos.classList = 'divTextos'
-
-    const nome = document.createElement('h3')
-    nome.textContent = link.idUsuario
+    divTextos.className = 'divTextos'
 
     const descricao = document.createElement('p')
     descricao.textContent = link.descricao
-
-    divTextos.appendChild(nome)
     divTextos.appendChild(descricao)
 
-    divPublicacao.appendChild(novaImg)
     divPublicacao.appendChild(divTextos)
-
     card.appendChild(divPublicacao)
+    card.appendChild(divUser)
 
     fotosMain.appendChild(card)
 }
 
-//*********************************User**********************************************************************
-
-async function pesquisarUser(id) {
-    const url = `https://back-spider.vercel.app/user/pesquisarUser/${id}`
-
-    const response = await fetch(url)
-    const data = await response.json()
-    return data
-}
-
-function criarUser(link) {
-
-}
-
 async function preencherFotos(){
-    const storys = await pesquisarStories()
+    const storys = await pesquisarStorys()
     const fotos = await pesquisarFotos()
-    const usuarios = await
 
-    storys.forEach (criarStories)
+    storys.forEach(criarStorys)
 
-    fotos.forEach(idUserPost => {
-        usuarios.forEach(idUser => {
-            if (idUserPost.id == idUser) {
-                console.log(user)
-                criarUsuario(user)
-            }
-        })
+    fotos.forEach(async (userPost) => {
+        const usuario = await pesquisarUser(userPost.idUsuario)
+            console.log(usuario)
+            criarPosts(userPost, usuario)   
     })
 }
 
