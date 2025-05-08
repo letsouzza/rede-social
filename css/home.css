@@ -74,7 +74,7 @@ header{
     width: 60vh;
 }
 .divTextos p{
-    padding-top: 15vh;
+    padding-top: 3vh;
     width: 60vh;
     color: #000000;
     font-size: 4vh;
@@ -85,16 +85,17 @@ header{
     gap: 2vh;
 }
 .divUser img{
-    justify-content: center;
-    /* border-radius: 100%; */
-    width: 25vh;
-    height: 25vh;
+    border-radius: 50%;
+    width: 12vh;
+    height: 12vh;
+    object-fit: cover;
 }
 .divUser h3{
     font-family: "Gothic A1", sans-serif;
     color: rgb(0, 0, 0);
-    font-size: 4vh;
+    font-size: 3.5vh;
     text-align: center;
+    padding-top: 4vh;
 }
 
 

@@ -46,6 +46,10 @@ function criarPosts(link, user){
     const divPublicacao = document.createElement('div')
     divPublicacao.classList = 'divPublicacao'
 
+    // Texto de descrição
+    const divTextos = document.createElement('div')
+    divTextos.className = 'divTextos'
+
     // Acrescentando o User
     const divUser = document.createElement('div')
     divUser.className = 'divUser'
@@ -57,15 +61,12 @@ function criarPosts(link, user){
     const username = document.createElement('h3')
     username.textContent = user.nome
     divUser.appendChild(username)
+    divTextos.appendChild(divUser)
 
     // Acrescentando Imagem no Card
     const novaImg = document.createElement('img') 
     novaImg.src = link.imagem
     divPublicacao.appendChild(novaImg)
-
-    // Texto de descrição
-    const divTextos = document.createElement('div')
-    divTextos.className = 'divTextos'
 
     const descricao = document.createElement('p')
     descricao.textContent = link.descricao
@@ -73,7 +74,6 @@ function criarPosts(link, user){
 
     divPublicacao.appendChild(divTextos)
     card.appendChild(divPublicacao)
-    card.appendChild(divUser)
 
     fotosMain.appendChild(card)
 }
